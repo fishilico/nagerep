@@ -4,7 +4,8 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 import os.path
-ROOT_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+TEMP_DIR = os.path.join(ROOT_DIR, 'temp')
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -15,7 +16,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(ROOT_DIR, '..', 'db.sqlite'),
+        'NAME': os.path.join(ROOT_DIR, 'db.sqlite'),
     }
 }
 
@@ -119,9 +120,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'facebook',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -152,3 +154,11 @@ LOGGING = {
         },
     }
 }
+
+# Google API access
+GOOGLE_API_ID = None
+GOOGLE_API_SECRET = None
+
+# Facebook Application
+FACEBOOK_API_ID = None
+FACEBOOK_API_SECRET = None
