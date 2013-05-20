@@ -1,0 +1,7 @@
+# Temporary files
+.*.swp
+*.pyc
+*.pyo
+
+/db.sqlite
+/nagerep/settings/personal.py
